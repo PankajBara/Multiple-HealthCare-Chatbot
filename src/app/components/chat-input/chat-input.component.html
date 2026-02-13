@@ -1,0 +1,31 @@
+<div class="chat-footer">
+    <form (submit)="onSubmit()" class="d-flex align-items-end">
+        <div class="file-upload-container me-2">
+            <button type="button" (click)="fileInput.click()" class="file-upload-btn btn btn-primary">
+                <i class="fas fa-paperclip"></i>
+            </button>
+            <input #fileInput type="file" (change)="onFileSelected($event)" class="file-upload-input"
+                style="display: none;" accept="image/*">
+        </div>
+
+
+
+        <div class="flex-grow-1">
+            <div class="preview-container" [style.display]="previewImageStr ? 'block' : 'none'">
+                <div class="d-flex align-items-center mb-2">
+                    <img [src]="previewImageStr" class="preview-image me-2">
+                    <button type="button" class="btn btn-sm btn-outline-danger" (click)="removeImage()">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+            <textarea [(ngModel)]="messageInput" name="messageInput" class="form-control message-input" rows="1"
+                placeholder="Ask a medical question..."
+                (keydown.enter)="$event.preventDefault(); onSubmit()"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary rounded-circle ms-2" style="width: 40px; height: 40px;">
+            <i class="fas fa-paper-plane"></i>
+        </button>
+    </form>
+</div>

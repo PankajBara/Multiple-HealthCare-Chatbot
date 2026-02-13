@@ -1,0 +1,19 @@
+<div class="container-fluid py-4">
+    <div class="row">
+        <!-- Sidebar -->
+        <div class="col-md-3 mb-3">
+            <app-sidebar (clearChat)="clearChat()"></app-sidebar>
+        </div>
+
+        <!-- Chat Container -->
+        <div class="col-md-9">
+            <div class="chat-container">
+                <app-chat-header></app-chat-header>
+
+                <app-chat-window [messages]="displayMessages" [isLoading]="isLoading"></app-chat-window>
+
+                <app-chat-input [isLoading]="isLoading" (sendMessage)="onSendMessage($event)"></app-chat-input>
+            </div>
+        </div>
+    </div>
+</div>

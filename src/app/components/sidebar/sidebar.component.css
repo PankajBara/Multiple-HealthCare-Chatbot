@@ -1,0 +1,29 @@
+.sidebar {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    height: 90vh;
+    overflow-y: auto;
+}
+
+.sidebar h5 {
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eaeaea;
+    padding-bottom: 10px;
+}
+
+.agent-info {
+    margin-bottom: 15px;
+}
+
+.agent-info h6 {
+    color: #0d6efd;
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        height: auto;
+        margin-bottom: 15px;
+    }
+}

@@ -1,0 +1,51 @@
+.chat-footer {
+    padding: 15px;
+    border-top: 1px solid #eaeaea;
+    background-color: #f8f9fa;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.file-upload-container {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.file-upload-btn {
+    border: none;
+    color: white;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.file-upload-input {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+
+.preview-container {
+    margin-top: 10px;
+    display: none;
+}
+
+.preview-image {
+    max-width: 100px;
+    max-height: 100px;
+    border-radius: 5px;
+}
+
+.message-input {
+    border-radius: 20px;
+    padding: 10px 15px;
+    resize: none;
+}

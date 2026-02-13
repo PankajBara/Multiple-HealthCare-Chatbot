@@ -1,0 +1,125 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    overflow: hidden;
+    min-height: 0;
+}
+
+.chat-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.message {
+    max-width: 80%;
+    margin-bottom: 15px;
+    padding: 10px 15px;
+    border-radius: 15px;
+    position: relative;
+}
+
+.user-message {
+    background-color: #e3f2fd;
+    color: #000;
+    align-self: flex-end;
+    border-bottom-right-radius: 0;
+}
+
+.assistant-message {
+    background-color: #f5f5f5;
+    color: #000;
+    align-self: flex-start;
+    border-bottom-left-radius: 0;
+}
+
+.agent-tag {
+    display: inline-block;
+    background-color: #ebf5ff;
+    color: #0d6efd;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 0.8em;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.result-image {
+    max-width: 300px;
+    max-height: 300px;
+    border-radius: 5px;
+    margin-top: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.thinking {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.dot {
+    height: 8px;
+    width: 8px;
+    margin-right: 5px;
+    background-color: #0d6efd;
+    border-radius: 50%;
+    display: inline-block;
+    animation: pulse 1.5s infinite ease-in-out;
+}
+
+.dot:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.dot:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.8);
+        opacity: 0.5;
+    }
+
+    50% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(0.8);
+        opacity: 0.5;
+    }
+}
+
+/* Table styling for markdown tables */
+::ng-deep .message table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 10px 0;
+    font-size: 0.9em;
+}
+
+::ng-deep .message th,
+::ng-deep .message td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+::ng-deep .message th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+::ng-deep .message tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+::ng-deep .message tr:hover {
+    background-color: #f0f0f0;
+}

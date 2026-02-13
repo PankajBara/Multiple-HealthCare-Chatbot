@@ -1,0 +1,33 @@
+<div class="chat-body" #chatBody>
+    <div *ngFor="let msg of messages"
+        [ngClass]="{'user-message': msg.role === 'user', 'assistant-message': msg.role === 'assistant'}"
+        class="message">
+        <div *ngIf="msg.agent" class="agent-tag">{{ msg.agent }}</div>
+
+        <div *ngIf="msg.role === 'user'">
+            <p>{{ msg.content }}</p>
+            <div *ngIf="msg.image" class="mt-2">
+                <img [src]="msg.image" alt="Uploaded image" class="img-fluid rounded" style="max-height: 200px;">
+            </div>
+        </div>
+
+        <div *ngIf="msg.role === 'assistant'">
+            <div [innerHTML]="parseMarkdown(msg.content)"></div>
+
+            <div *ngIf="msg.resultImage" class="mt-3">
+                <img [src]="msg.resultImage" alt="Result image" class="result-image">
+            </div>
+
+            <div *ngIf="msg.agent && msg.agent.includes('HUMAN_VALIDATION')" class="mt-3 p-3 border rounded bg-light">
+                <p><strong> Human Validation Required:</strong> Do you agree with this result?</p>
+                <button class="btn btn-success btn-sm me-2">✔ Yes</button>
+                <button class="btn btn-danger btn-sm">✖ No</button>
+                <textarea class="form-control mt-2" rows="2" placeholder="Add comments (optional)"></textarea>
+            </div>
+
+
+        </div>
+    </div>
+
+
+</div>
